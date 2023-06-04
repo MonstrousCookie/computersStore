@@ -10,11 +10,16 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+//TODO: лучше добавить версионирование:
+// /api/v1/hd
 @RequestMapping("/api/hd")
-public class HardDrivesController extends AbstractProductRestController<HardDrives,HardDrivesService>{
-
+public class HardDrivesController extends AbstractProductRestController<HardDrives, HardDrivesService> {
+    //TODO: лучше убрать аннотацию  @Autowired (использовать либу Lombok)
+    // private final HardDrivesService hardDrivesService;
     @Autowired
     private HardDrivesService hardDrivesService;
+
+    //TODO: нужно выпилить то, что не используется
     @Autowired
     public HardDrivesController(HardDrivesService hardDrivesService) {
         super(hardDrivesService);

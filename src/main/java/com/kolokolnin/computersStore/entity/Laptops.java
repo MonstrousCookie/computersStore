@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 
 @NoArgsConstructor
+//TODO: @Data можно убрать, это overkill
 @Data
 @Entity
 @Table(name = "laptop")
@@ -16,6 +17,7 @@ public class Laptops extends ProductProperties{
     @Column(name = "screen_inch")
     private ScreenInch screenInch;
 
+    //TODO: лучше выпилить то, что не используется
     public enum ScreenInch {
         INCH_13,
         INCH_14,

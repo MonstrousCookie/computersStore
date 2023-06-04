@@ -11,7 +11,8 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class HardDrivesService extends AbstractProductService<HardDrives, HardDrivesRepo> {
-
+    //TODO: лучше убрать аннотацию  @Autowired (использовать либу Lombok)
+    // private final HardDrivesRepo hardDrivesRepo;
    @Autowired
    private HardDrivesRepo hardDrivesRepo;
 

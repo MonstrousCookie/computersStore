@@ -11,7 +11,8 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class DesktopComputerService extends AbstractProductService<DesktopComputers, DesktopComputersRepo> {
-
+    //TODO: лучше убрать аннотацию  @Autowired (использовать либу Lombok)
+    // private final DesktopComputersRepo desktopComputersRepo;
    @Autowired
    private DesktopComputersRepo desktopComputersRepo;
 

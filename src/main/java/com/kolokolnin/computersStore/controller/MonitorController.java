@@ -10,11 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+//TODO: лучше добавить версионирование:
+// /api/v1/monitor
 @RequestMapping("/api/monitor")
 public class MonitorController extends AbstractProductRestController<Monitors, MonitorService> {
 
     @Autowired
     private MonitorService monitorService;
+
+    //TODO: нужно выпилить то, что не используется
     @Autowired
     public MonitorController(MonitorService monitorService) {
         super(monitorService);

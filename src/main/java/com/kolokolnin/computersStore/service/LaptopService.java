@@ -11,6 +11,8 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class LaptopService extends AbstractProductService<Laptops, LaptopRepo> {
+    //TODO: лучше убрать аннотацию  @Autowired (использовать либу Lombok)
+    // private final LaptopRepo laptopRepo;
     @Autowired
     private LaptopRepo laptopRepo;
 

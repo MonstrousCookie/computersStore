@@ -10,10 +10,16 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+//TODO: лучше добавить версионирование:
+// /api/v1/laptop
 @RequestMapping("/api/laptop")
 public class LaptopController extends AbstractProductRestController<Laptops, LaptopService> {
-   @Autowired
-   private LaptopService laptopService;
+    //TODO: лучше убрать аннотацию  @Autowired (использовать либу Lombok)
+    // private final LaptopService laptopService;
+    @Autowired
+    private LaptopService laptopService;
+
+    //TODO: нужно выпилить то, что не используется
     @Autowired
     public LaptopController(LaptopService laptopService) {
         super(laptopService);

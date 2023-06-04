@@ -9,6 +9,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
+//TODO: та же история что и с AbstractProductRestController
 public abstract class AbstractProductService<E extends ProductProperties,
         R extends ProductPropertiesRepo<E>> implements ProductPropertiesService<E> {
 

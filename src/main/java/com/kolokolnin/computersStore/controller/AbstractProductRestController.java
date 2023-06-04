@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-public abstract class AbstractProductRestController <E extends ProductProperties,
+//TODO: можем как-то порефачить это на уровне архитектуры ?
+// обычно так не пишут, потому что это тяжело читать
+public abstract class AbstractProductRestController<E extends ProductProperties,
         S extends ProductPropertiesService<E>> implements ProductPropertiesController<E> {
 
     private final S service;
@@ -24,6 +26,7 @@ public abstract class AbstractProductRestController <E extends ProductProperties
 
     @Override
     public boolean addProduct(@RequestBody E requestedProduct) {
+        //TODO: давай посмотрим в сторону ProductValidator
         if (requestedProduct.getSerialNumber() != null) {
             return service.createProduct(requestedProduct);
         }
@@ -33,6 +36,12 @@ public abstract class AbstractProductRestController <E extends ProductProperties
 
     @Override
     public E getProductBySerialNumberOrId(@RequestBody E requestedProduct) {
+        //TODO: давай посмотрим в сторону ProductValidator
+        // Такое решение не очень хорошо поддерживаестя и его сложно расширять.
+        // Можно сделать так:
+        // public interface ProductValidator {
+        // validate(String productId)
+        // }
         if (requestedProduct.getId() != null) {
             return service.readById(requestedProduct.getId());
         }
@@ -45,6 +54,7 @@ public abstract class AbstractProductRestController <E extends ProductProperties
     }
 
     public List<E> getProductsByDefaultProperty(E requestedProduct) {
+        //TODO: давай посмотрим в сторону ProductValidator
         if (requestedProduct.getManufacturer() != null) {
             return service.readByManufacturer(requestedProduct.getManufacturer());
         }

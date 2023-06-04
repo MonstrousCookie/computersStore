@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @NoArgsConstructor
+//TODO: @Data можно убрать, это overkill
 @Data
 @Table(name = "monitor")
 public class Monitors extends ProductProperties {

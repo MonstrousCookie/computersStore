@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 
 @NoArgsConstructor
+//TODO: @Data можно убрать, это overkill
 @Data
 @Entity
 @Table(name = "hard_drive")

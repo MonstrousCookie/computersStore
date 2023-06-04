@@ -10,11 +10,16 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+//TODO: лучше добавить версионирование:
+// /api/v1/pc
 @RequestMapping("/api/pc")
-
 public class DesktopComputerController extends AbstractProductRestController<DesktopComputers, DesktopComputerService> {
-@Autowired
-    private  DesktopComputerService desktopComputerService;
+    //TODO: лучше убрать аннотацию  @Autowired (использовать либу Lombok)
+    // private final DesktopComputerService desktopComputerService;
+    @Autowired
+    private DesktopComputerService desktopComputerService;
+
+    //TODO: нужно выпилить то, что не используется
     @Autowired
     public DesktopComputerController(DesktopComputerService desktopComputerService) {
         super(desktopComputerService);

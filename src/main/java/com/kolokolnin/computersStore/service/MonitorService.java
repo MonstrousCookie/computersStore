@@ -11,7 +11,8 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class MonitorService extends AbstractProductService<Monitors, MonitorRepo> {
-
+    //TODO: лучше убрать аннотацию  @Autowired (использовать либу Lombok)
+    // private final MonitorRepo monitorRepo;
     @Autowired
     private MonitorRepo monitorRepo;
 
